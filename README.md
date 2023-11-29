@@ -1,4 +1,4 @@
-# aquaman-frontend
+# aquaman
 
   ### github 키워드
 
