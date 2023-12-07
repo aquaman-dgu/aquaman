@@ -36,5 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 
-### 민감사항 ###
-src/main/resources
+### setting ###
+application-setting.properties

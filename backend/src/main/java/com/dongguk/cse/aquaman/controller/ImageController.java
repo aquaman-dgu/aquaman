@@ -20,9 +20,9 @@ import java.io.IOException;
 public class ImageController {
 
     @Autowired
-    private  ImageService imageService;
+    private ImageService imageService;
 
-    @PostMapping("/api/image")
+    @PostMapping("/api/upload")
     public ResponseEntity<String> downloadImage( MultipartFile file) throws IOException {
         byte[] bytes = file.getBytes();
         try {
