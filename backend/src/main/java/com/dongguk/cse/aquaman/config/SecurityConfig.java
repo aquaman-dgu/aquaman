@@ -1,4 +1,4 @@
-package com.dongguk.cse.aquaman.dto.config;
+package com.dongguk.cse.aquaman.config;
 
 import com.dongguk.cse.aquaman.security.filter.JwtAuthenticationFilter;
 import com.dongguk.cse.aquaman.security.jwt.JwtTokenProvider;
