@@ -12,6 +12,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 @Slf4j
@@ -22,16 +23,20 @@ public class ImageController {
     @Autowired
     private ImageService imageService;
 
-    @PostMapping("/api/upload")
-    public ResponseEntity<String> downloadImage( MultipartFile file) throws IOException {
+    @PostMapping(value = "/api/upload",  consumes = "multipart/form-data")
+    public ResponseEntity<ImageResponseDTO> downloadImage(@RequestPart("file") MultipartFile file,
+                                                          @RequestParam("length") double length,
+                                                          @RequestParam("weight") double weight ,
+                                                          @RequestParam("feed") double feed)
+            throws IOException {
         byte[] bytes = file.getBytes();
         try {
-            ImageResponseDTO response = imageService.sendToFlask(bytes);
+            ImageResponseDTO response = imageService.sendToFlask(bytes, length, weight, feed);
             if (response.getStatus().equals("success"))
-                return ResponseEntity.status(200).body(response.getMessage());
-            else return ResponseEntity.status(500).body("upload failed.");
+                return ResponseEntity.status(200).body(response);
+            else return ResponseEntity.status(500).body(null);
         } catch (HttpServerErrorException e) {
-            return ResponseEntity.status(500).body("response is null: " + e.getMessage());
+            return ResponseEntity.status(500).body(null);
         }
     }
 }
