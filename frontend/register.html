@@ -169,7 +169,7 @@
             username = username.trim();
             password = password.trim();
 
-            fetch("http://127.0.0.1:5000/members/sign-up", {
+            fetch("http://127.0.0.1:8080/members/sign-up", {
                 method: "POST",
                 body: {
                     username,
@@ -184,13 +184,13 @@
             }).then(() => {
                 alert("회원 가입이 완료되었습니다. 로그인 해주세요");
                 // todo: 아래의 요청을 보내면 서버에서 login 페이지를 보내줘야 함
-                fetch("http://127.0.0.1:5000/members/login", {method: "GET"})
+                fetch("http://127.0.0.1:8080/members/login", {method: "GET"})
             }).catch((err) => console.log(err));
         });
 
         loginLink.addEventListener('click', () => {
             // todo: 아래의 요청을 보내면 서버에서 login 페이지를 보내줘야 함
-            fetch("http://127.0.0.1:5000/members/login", {method: "GET"})
+            fetch("http://127.0.0.1:8080/members/login", {method: "GET"})
         })
     })
 </script>

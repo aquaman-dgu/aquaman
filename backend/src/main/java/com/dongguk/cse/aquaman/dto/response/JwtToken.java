@@ -1,14 +1,14 @@
-//package com.dongguk.cse.aquaman.dto.response;
-//
-//import lombok.AllArgsConstructor;
-//import lombok.Builder;
-//import lombok.Data;
-//
-//@Builder
-//@Data
-//@AllArgsConstructor
-//public class JwtToken {
-//    private String grantType;
-//    private String accessToken;
-//    private String refreshToken;
-//}
+package com.dongguk.cse.aquaman.dto.response;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+@AllArgsConstructor
+public class JwtToken {
+    private String grantType;
+    private String accessToken;
+    private String refreshToken;
+}

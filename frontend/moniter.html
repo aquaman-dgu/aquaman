@@ -1,286 +1,196 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
     <style>
-        #container {
-            width: 375px;
-            height: 856px;
-        }
-
-        header div {
-            width: 375px;
-            height: 79px;
-            background: var(--Primary, #4796bd);
-            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
-        }
-
-        #img1 {
-            position: relative;
-            top: 5%;
-            left: 5%;
-        }
-
-        #img2 {
-            position: relative;
-            top: 35%;
-            left: 65%;
-        }
-
-        header div span {
-            color: var(--Grey-Very-Light, #f4f9fa);
-            text-align: center;
-            font-family: Lato;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-        }
-
-        #header-text1 {
-            position: relative;
-            top: 5%;
-            left: 12%;
-        }
-
-        #header-text2 {
-            position: relative;
-            top: 45%;
-            left: -13%;
-        }
-
-        #header-text3 {
-            position: relative;
-            top: 45%;
-            left: -3%;
-        }
-
-        #main-text {
-            color: var(--Grey-Dark, #495d69);
-            text-align: center;
-            font-family: Lato;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 70px;
-            margin-left: 30px;
-        }
-
-        hr {
-            background: #c2c2c2;
-            width: 325px;
-            height: 1px;
-        }
-
-        #box {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
             display: flex;
-            gap: 20px;
-            flex-direction: column;
-        }
-
-        .box-items {
-            width: 290px;
-            height: 35px;
-            border-radius: 5px;
-            background: var(--Gray-5, #e0e0e0);
-            border: none;
-            margin: auto;
-        }
-
-        #picture {
-            width: 324px;
-            height: 181px;
-            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-            margin: auto;
-        }
-
-        #plus-minus {
-            display: flex;
-            width: 375px;
-            height: 50px;
-            position: relative;
-            left: 61%;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .rect-button {
-            width: 149.889px;
-            height: 32px;
-            flex-shrink: 0;
-            display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            background-color: var(--Primary, #4796bd);
-            color: var(--Grey-Very-Light, #f4f9fa);
+            height: 100vh;
+        }
+
+        form {
+            background: var(--Background, #F3F9FB);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 375px;
+            height: 667px;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--Grey-Very-Dark, #122E40);
+            text-align: center;
             font-family: Lato;
-            font-size: 16px;
+            font-size: 32px;
+            font-style: normal;
             font-weight: 700;
             line-height: normal;
-            border: none;
-            border-radius: 5px;
-            margin: 10px auto;
         }
 
-        .rect-button svg {
-            width: 150px;
-            height: 32px;
-            margin-right: 5px;
-        }
-
-        #add-picture-button {
+        label {
             display: flex;
-            border-radius: 10px;
-            width: 352px;
-            height: 32px;
-            justify-content: center;
-            border: 1px solid #4796BD;
-            background-color: white;
-            color: #4796BD;
-            line-height: 32px;
-        }
-
-        #monitoring-start {
-            width: 118px;
-            height: 35px;
-            border-radius: 25px;
-            background: var(--Primary, #4796BD);
-            box-shadow: 0px 5px 65px 0px rgba(0, 0, 0, 0.10);
-            margin: auto;
-            color: white;
-            color: var(--Grey-Very-Light, #F4F9FA);
-            text-align: center;
+            width: 82.469px;
+            height: 20.3px;
+            flex-direction: column;
+            justify-content: flex-end;
+            flex-shrink: 0;
+            color: var(--Gray-3, #828282);
             font-family: Lato;
             font-size: 16px;
             font-style: normal;
-            font-weight: 700;
-            line-height: 35px;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 234px;
+            height: 35px;
+            flex-shrink: 0;
+            background: var(--Primary, #4796BD);
+            border-radius: 25px;
+            box-shadow: 0px 5px 65px 0px rgba(0, 0, 0, 0.10);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #30678e;
+        }
+
+        .register-link {
+            margin-top: 16px;
+            text-align: center;
+            color: #495D69;
+            font-family: Lato;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .register-link > a {
+            color: #495D69;
+            text-decoration: none;
+        }
+
+        #register-data {
+            margin-top: 40px;
+        }
+
+        #login-button {
+            margin-top: 200px;
         }
     </style>
 </head>
 <body>
-<div id="container">
-    <header>
-        <div>
-            <img id="img1" src="./Group 38.png" alt=""/><span id="header-text1"
-        >어병검출</span
-        ><img id="img2" src="./Group 39.png" alt=""/>
-            <span id="header-text2">사용자 입력값</span>&nbsp;&nbsp;
-            <span id="header-text3">검출결과</span>
-        </div>
-    </header>
-    <main>
-        <span id="main-text">검출하고 싶은 넙치</span>
-        <hr/>
-        <div id="box">
-            <div></div>
-            <input
-                    class="box-items"
-                    type="text"
-                    placeholder="&nbsp;현재 평균 길이:"
-            />
-            <input
-                    class="box-items"
-                    type="text"
-                    placeholder="&nbsp;현재 평균 체중:"
-            />
-            <input
-                    class="box-items"
-                    type="text"
-                    placeholder="&nbsp;현재 급이량:"
-            />
-            <hr style="margin-top: 7%"/>
-            <input id="image-input" type="file" style="display: none"/>
-            <img id="image-preview" src="" alt=""
-                 style="object-fit: contain; width: 324px; margin: auto; border-radius: 10px;"/>
-            <div class=" button-container"/>
-            <div class="rect-button">
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="150" height="32" viewBox="0 0 150 32" fill="none">
-                  <rect x="0.4" y="0.4" width="149.089" height="31.2" rx="1.2" stroke="#4195B4" stroke-width="0.8"/>
-                </svg> -->
-                <div id="add-picture-button">+ 사진 추가</div>
-            </div>
-        </div>
-    </main>
-</div>
-<div id="plus-minus">
-    <img src="./plus.png" alt=""/>
-    <img src="./minus.png" alt=""/>
-</div>
-<div id="monitoring-start" style="cursor: pointer">어병 검출 시작</div>
-</main>
-</div>
+<form id="register-form">
+    <h2>Register</h2>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <label for="nickname">Nickname:</label>
+    <input type="text" id="nickname" name="nickname">
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address">
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone">
+
+    <button type="submit">Register</button>
+    <div id="login-link">
+        <p>Already have an account? <span style="cursor: pointer; color: blue">Login</span></p>
+    </div>
+</form>
 <script>
     window.addEventListener('load', () => {
-        const addImageButton = document.getElementById('add-picture-button');
-        const imageInput = document.getElementById('image-input');
-        const imagePreview = document.getElementById('image-preview');
-        const fishLengthInput = document.getElementById('fish-length');
-        const fishWeightInput = document.getElementById('fish-weight');
-        const fishFeeInput = document.getElementById('fish-fee');
-        const monitoringStartButton = document.getElementById('monitoring-start');
-        let imageFile = null;
+        const registerForm = document.getElementById("register-form");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const nicknameInput = document.getElementById("nickname");
+        const addressInput = document.getElementById("address");
+        const phoneInput = document.getElementById("phone");
+        const loginLink = document.getElementById("login-link");
 
-        addImageButton.addEventListener('click', () => {
-            imageInput.click();
-        })
+        registerForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        imageInput.addEventListener('change', () => {
-            const imageFiles = imageInput.files;
-            if (imageFiles.length === 0) {
+            let username = usernameInput.value;
+            let password = passwordInput.value;
+            let nickname = nicknameInput.value;
+            let address = addressInput.value;
+            let phone = phoneInput.value;
+
+            if (!username || username.trim() === '') {
+                alert("이름을 입력하세요");
                 return;
             }
-            imageFile = imageFiles[0];
-            const selectedFiles = URL.createObjectURL(imageFile)
-            imagePreview.setAttribute('src', selectedFiles);
-        })
-
-        monitoringStartButton.addEventListener('click', () => {
-            const fishLength = fishLengthInput.value;
-            const fishWeight = fishWeightInput.value;
-            const fishFee = fishFeeInput.value;
-
-            if (!fishLength || fishLength.trim() === '') {
-                alert('길이를 입력하세요');
-                return
+            if (!password || password.trim() === '') {
+                alert("비밀번호를 입력하세요");
+                return;
             }
-            if (!fishWeight || fishWeight.trim() === '') {
-                alert('체중을 입력하세요');
-                return
+            if (!nickname || nickname.trim() === '') {
+                alert("닉네임을 입력하세요");
+                return;
             }
-            if (!fishFee || fishFee.trim() === '') {
-                alert('급이량을 입력하세요');
-                return
+            if (!address || address.trim() === '') {
+                alert("주소를 입력하세요");
+                return;
             }
-            if (!imageFile) {
-                alert('사진을 추가하세요');
-                return
+            if (!phone || phone.trim() === '') {
+                alert("연락처를 입력하세요");
+                return;
             }
 
-            const formData = new FormData();
-            formData.append('image', imageFile);
+            username = username.trim();
+            password = password.trim();
 
-            const accessToken = localStorage.getItem('accessToken');
-            // todo: 결과로 monotor result 페이지에 데이터를 삽입해서 돌려줘야 함
-            fetch("http://127.0.0.1:5000/api/upload", {
+            fetch("http://127.0.0.1:5000/members/sign-up", {
                 method: "POST",
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    Authorization: `Bearer ${accessToken}`
-                },
                 body: {
-                    file: formData, // todo: formData 의 image 키에 이미지 파일이 저장되어 있다는 사실을 서버와 맞출 것
-                    length: fishLength,
-                    weight: fishWeight,
-                    fee: fishFee
-                },
-            })
+                    username,
+                    password,
+                    nickname,
+                    address,
+                    phone,
+                    roles: []
+                }
+            }).then(response => {
+                return response.json();
+            }).then(() => {
+                alert("회원 가입이 완료되었습니다. 로그인 해주세요");
+                // todo: 아래의 요청을 보내면 서버에서 login 페이지를 보내줘야 함
+                fetch("http://127.0.0.1:5000/members/login", {method: "GET"})
+            }).catch((err) => console.log(err));
+        });
+
+        loginLink.addEventListener('click', () => {
+            // todo: 아래의 요청을 보내면 서버에서 login 페이지를 보내줘야 함
+            fetch("http://127.0.0.1:5000/members/login", {method: "GET"})
         })
     })
 </script>
