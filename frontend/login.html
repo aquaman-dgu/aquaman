@@ -109,7 +109,7 @@
 
     <button type="submit">Login</button>
     <div id="register-link">
-        <p>New user? <span style="cursor: pointer; color: blue">Register</span></p>
+        <p>New user? <span style="cursor: pointer; color: blue"><a href="register.html">Register</a> </span></p>
     </div>
 </form>
 <script>
@@ -137,7 +137,7 @@
             username = username.trim();
             password = password.trim();
 
-            fetch("http://127.0.0.1:5000/members/sign-in/", {
+            fetch("http://127.0.0.1:8080/members/sign-in/", {
                 method: "POST",
                 body: {username, password},
             })
@@ -149,7 +149,7 @@
                     const accessToken = data.accessToken;
                     localStorage.setItem('accessToken', accessToken);
                     // todo: 아래의 요청을 보내면 서버에서 monitor 페이지를 보내줘야 함
-                    fetch("http://127.0.0.1:5000/members/monitor", {
+                    fetch("http://127.0.0.1:8080/members/monitor", {
                         method: "GET",
                         headers: {
                             Authorization: `Bearer ${accessToken}`
@@ -158,10 +158,10 @@
                 })
                 .catch((err) => console.log(err));
         });
-        registerLink.addEventListener('click', () => {
+        <!-- registerLink.addEventListener('click', () => {
             // todo: 아래의 요청을 보내면 서버에서 register 페이지를 보내줘야 함
-            fetch("http://127.0.0.1:5000/members/register", {method: "GET"})
-        })
+            fetch("http://127.0.0.1:8080/members/register", {method: "GET"})
+        }) -->
     })
 </script>
 </body>
